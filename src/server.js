@@ -1,14 +1,16 @@
 import express from "express";
+import morgan from "morgan";
+
+import userRouter from "./routers/userRouter";
+import videoRouter from "./routers/videoRouter";
+import globalRouter from "./routers/globalRouter";
+
 const PORT = 4000;
 const app = express();
+app.use(morgan("dev"));
 
-app.get("/", (req, res) => {
-  console.log("someone come");
-  return res.send(`<a href="#">Hi Five</a>`);
-});
+app.use("/", globalRouter);
+app.use("/videos", videoRouter);
+app.use("/users", userRouter);
 
-app.use((req, res) => {
-  res.status(404).send("<h1>어디 감히 이상한 URL로 접속하고 그러냐!!!</h1>");
-});
-
-app.listen(PORT, () => {});
+app.listen(PORT, () => console.log("😃CONNECTING😃"));
