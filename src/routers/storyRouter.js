@@ -1,9 +1,16 @@
 import express from "express";
-import { idHome, edit, remove } from "../controller/storyController";
-const videoRouter = express.Router();
 
-videoRouter.get("/:id", idHome);
-videoRouter.get("/:id/edit", edit);
-videoRouter.get("/:id/delete", remove);
+import {
+  seeStory,
+  editStory,
+  deleteStory,
+} from "../controllers/storiesController";
 
-export default videoRouter;
+const storyRouter = express.Router();
+
+// "/stories"
+storyRouter.get("/:id", seeStory);
+storyRouter.get("/:id/edit", editStory);
+storyRouter.get("/:id/delete", deleteStory);
+
+export default storyRouter;
