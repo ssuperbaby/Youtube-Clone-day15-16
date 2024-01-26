@@ -1,4 +1,6 @@
-export const home = (req, res) => res.render("stories", { path: "home" });
+export const home = (req, res) => {
+  res.render("stories", { path: "home" });
+};
 export const trending = (req, res) =>
   res.render("stories", { path: "trending" });
 export const newStories = (req, res) =>

@@ -1,3 +1,5 @@
+import "./db";
+import "./models/Video";
 import express from "express";
 import morgan from "morgan";
 
@@ -15,4 +17,4 @@ app.use("/", globalRouter);
 app.use("/stories", storyRouter);
 app.use("/users", userRouter);
 
-app.listen(PORT, () => console.log("😃CONNECTING😃"));
+app.listen(PORT, () => console.log("✅ CONNECTING"));
