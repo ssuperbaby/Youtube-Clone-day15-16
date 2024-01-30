@@ -1,0 +1,16 @@
+extends layout.pug
+include ./mixins/video
+
+block title
+    title #{path} | stories
+
+block main
+    main
+        h1 #{path}
+    form(method="GET")
+        input(type="text" name="keyword" placeholder="What do you want to search?" required)
+        input(type="submit" )
+    if videos
+        each video in videos
+            +videoMixin(video)
+    

@@ -5,6 +5,8 @@ block title
     title #{path} | stories
 
 block main
+    main
+        h1 #{path}
     if videos.length
         each video in videos
             +videoMixin(video)

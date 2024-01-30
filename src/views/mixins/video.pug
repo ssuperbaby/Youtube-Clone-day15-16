@@ -1,8 +1,9 @@
 mixin videoMixin(video)
-    div
-    ul
-        a(href=`/stories/${video.id}`)
-            h3=video.title
-        p=video.description
-        small=video.createdAt
-        hr
+    header 
+        div
+        ul
+            a(href=`/stories/${video.id}`)
+                h3=video.title
+            p=video.description
+            small=video.createdAt
+            hr
