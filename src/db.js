@@ -1,3 +1,5 @@
+// 시작하기전에 sudo systemctl start mongod
+
 import mongoose from "mongoose";
 const URL = "mongodb://127.0.0.1:27017/wetube";
 mongoose.connect(URL);

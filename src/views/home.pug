@@ -1,0 +1,12 @@
+extends layout
+include mixins/video
+
+block title
+    title #{path} | stories
+
+block main
+    if videos.length
+        each video in videos
+            +videoMixin(video)
+    else
+        h1 There is no video.

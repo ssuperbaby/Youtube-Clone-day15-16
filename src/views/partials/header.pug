@@ -1,4 +1,15 @@
 main
+    ul
+        div
+            a(href="/upload")
+                span Upload Movie/////////////       
+        div
+            a(href="/")
+                span Home
     header
-        h1 Hello
-        h2 -#{path} #{id}
+        if video
+            h1=video.title
+        else 
+            h1 Hello
+        block main  
+        h2 -#{path}

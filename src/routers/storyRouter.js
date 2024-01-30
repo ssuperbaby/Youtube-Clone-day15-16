@@ -4,13 +4,14 @@ import {
   seeStory,
   editStory,
   deleteStory,
+  postEditStory,
 } from "../controllers/storiesController";
 
 const storyRouter = express.Router();
 
 // "/stories"
 storyRouter.get("/:id", seeStory);
-storyRouter.get("/:id/edit", editStory);
-storyRouter.get("/:id/delete", deleteStory);
+storyRouter.route("/:id/edit").get(editStory).post(postEditStory);
+storyRouter.route("/:id/delete").get(deleteStory);
 
 export default storyRouter;

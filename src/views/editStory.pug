@@ -1,0 +1,13 @@
+extends layout.pug
+
+block title
+    title #{path} | stories
+
+block main
+    if error
+        h3=error
+    form(method="POST")
+        input(type="text" name="title" placeholder="Title" required value=video.title)
+        input(type="text" name="description" placeholder="description" required value=video.description)
+        input(type="text" name="hashtags" placeholder="hashtags" required value=video.hashtags.join())
+        input(type="submit")

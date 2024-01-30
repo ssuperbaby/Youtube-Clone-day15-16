@@ -1,4 +1,14 @@
 extends layout
 
 block title
-    title #{path} | stories
+    title #{path} | storys
+block main
+    div
+        small
+            a(href=`${id}/edit`) Edit video
+            br
+            a(href=`${id}/delete`) Delete video
+    small=video.createdAt
+    form
+        main=video.description
+        small=video.hashtags
